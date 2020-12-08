@@ -1,3 +1,3 @@
-# .NET_Studies
+# URI CHALLENGES using C#
 
-## It is not my first codes with C#, but the first time that I publish on github some notes
+
