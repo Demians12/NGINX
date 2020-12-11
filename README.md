@@ -62,7 +62,7 @@
 
 #### Agora vamos adicionar o serviço do nginx como um serviço do sistema:
 
-- Paramos o serviço do nginx: nginx -s stop
+- Paramos o serviço do nginx: *nginx -s stop*
 -	Criamos o arquivo nginx.service no caminho: touch /lib/systemd/system/nginx.service
 - Cole o seguinte script no arquivo usando qualquer editor e salve o arquivo:
 
