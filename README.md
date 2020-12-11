@@ -62,8 +62,29 @@
 
 #### Agora vamos adicionar o serviço do nginx como um serviço do sistema:
 
-*- Paramos o serviço do nginx: nginx -s stop*
-*- Criamos o arquivo nginx.service no caminho: 
-  touch /lib/systemd/system/nginx.service*
-*- Cole o seguinte script no arquivo usando qualquer editor:*
+- Paramos o serviço do nginx: nginx -s stop
+-	Criamos o arquivo nginx.service no caminho: touch /lib/systemd/system/nginx.service
+- Cole o seguinte script no arquivo usando qualquer editor e salve o arquivo:
+
+![image](https://user-images.githubusercontent.com/42981890/101868430-1927c980-3b5c-11eb-8e74-2b20b238f14c.png)
+
+##### Ele pode ser encontrado nesse link:
+<https://www.nginx.com/resources/wiki/start/topics/examples/systemd/>
+
+##### O script possui alguns erros, corrija as seguintes linhas:
+
+- PIDFile=/var/run/nginx.pid
+- ExecStarPre=/usr/bin/nginx -t
+- ExecStar=/bin/nginx
+
+#### Pronto, agora podemos utilizar o systemctl do systemd para manipular o serviço do nginx. Contudo, pode ocorrer do servidor reiniciar por algum motivo. Caso isso ocorra, o serviço precisa reiniciar junto com o sistema operacional. Então vamos habilitar:
+
+*systemctl enable nginx*
+
+##### Para testar podemos reiniciar o servidor. Após reiniciar usamos o comando para ver o status do serviço:
+
+*systemctl status nginx*
+
+
+
 
